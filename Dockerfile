@@ -1,7 +1,7 @@
 FROM chialab/php:7.1
 WORKDIR /app
 EXPOSE 8000
-RUN wget http://getcomposer.org/composer.phar \
+RUN curl -OfsSL http://getcomposer.org/composer.phar \
 ; php composer.phar install --no-dev \
 ; cp .env.example .env \
 ; php artisan key:generate
