@@ -1,4 +1,4 @@
-FROM php:7.1-cli
+FROM chialab/php:7.1
 WORKDIR /app
 EXPOSE 8000
 RUN wget http://getcomposer.org/composer.phar \
