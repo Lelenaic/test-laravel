@@ -1,6 +1,6 @@
 FROM chialab/php:7.1
 WORKDIR /app
-VOLUME /app
+ADD . /app
 EXPOSE 8000
 RUN curl -O http://getcomposer.org/composer.phar
 RUN php composer.phar install --no-dev
