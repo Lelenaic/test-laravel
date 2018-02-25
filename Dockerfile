@@ -1,7 +1,7 @@
 FROM chialab/php:7.1
 WORKDIR /app
 VOLUME /app
-ADD . /app
+COPY . /app
 EXPOSE 8000
 RUN composer install --no-dev
 RUN cp .env.example .env
