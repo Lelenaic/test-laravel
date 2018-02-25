@@ -2,9 +2,8 @@ FROM chialab/php:7.1
 WORKDIR /app
 ADD . /app
 EXPOSE 8000
-RUN curl -O http://getcomposer.org/composer.phar
-RUN php composer.phar install --no-dev
+RUN composer.phar install --no-dev
 RUN cp .env.example .env
 RUN php artisan key:generate
 
-CMD php artisan serve
+CMD php artisan serve --host=0.0.0.0
