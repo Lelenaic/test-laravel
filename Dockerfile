@@ -3,7 +3,7 @@ WORKDIR /app
 COPY . /app
 EXPOSE 8000
 RUN apt update && apt install -yqq mysql-client
-RUN echo "create database if not exists laravel;" | mysql -uroot -p $MYSQL_ROOT_PASSWORD
+RUN echo "create database if not exists laravel;" | mysql -h mysql -u root -p $MYSQL_ROOT_PASSWORD
 RUN composer install --no-dev
 RUN cp .env.example .env
 RUN php artisan key:generate
