@@ -1,10 +1,10 @@
 FROM chialab/php:7.1
 WORKDIR /app
 COPY . /app
-ARG MYSQL_ROOT_PASSWORD
+ARG MARIADB_ROOT_PASSWORD
 EXPOSE 8000
 RUN apt update && apt install -yqq mysql-client
-RUN echo "create database if not exists laravel;" | mysql -hmysql -uroot -p$MYSQL_ROOT_PASSWORD
+RUN echo "create database if not exists laravel;" | mysql -hmysql -uroot -p$MARIADB_ROOT_PASSWORD
 RUN composer install --no-dev
 RUN cp .env.example .env
 RUN php artisan key:generate
