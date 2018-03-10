@@ -1,6 +1,7 @@
 FROM chialab/php:7.1
 WORKDIR /app
 COPY . /app
+ARG MYSQL_ROOT_PASSWORD
 EXPOSE 8000
 RUN apt update && apt install -yqq mysql-client
 RUN echo "create database if not exists laravel;" | mysql -h mysql -u root -p $MYSQL_ROOT_PASSWORD
