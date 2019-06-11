@@ -8,4 +8,4 @@ RUN php artisan key:generate
 RUN php artisan make:auth
 RUN php artisan migrate
 
-CMD php artisa migrate --force ; php artisan serve --host=0.0.0.0
+CMD php artisan migrate --force ; php artisan serve --host=0.0.0.0
